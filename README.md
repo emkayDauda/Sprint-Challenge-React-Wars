@@ -30,6 +30,8 @@ Answer: React is a javascript library created by Facebook for building User Inte
 
 - [ ] What does it mean to _think_ in react?
 
+Answer: Thinking in react means to view whole User interfaces as being made up of smaller components which are then put together to form the whole thing. In effect, breaking down large UI into smaller components.
+
 - [ ] Describe state.
 
 - [ ] Describe props.
