@@ -34,6 +34,8 @@ Answer: Thinking in react means to view whole User interfaces as being made up o
 
 - [ ] Describe state.
 
+State refers to the properties or aspects of a react component which may change during the lifecycle of the website or app. A change in state is usually accompanied by a change in some part of the User Interface.
+
 - [ ] Describe props.
 
 - [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
