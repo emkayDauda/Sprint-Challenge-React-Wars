@@ -43,7 +43,7 @@ function Person({person}){
     
     return(
         <StyledPerson>
-            <img src={src}/>
+            <img src={src} alt=""/>
             <Name>{person.name}</Name>
             <div>
                 <p>Height: {person.height}</p>
