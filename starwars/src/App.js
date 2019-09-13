@@ -13,6 +13,7 @@ const App = () => {
   const [peopleFetched, setPeopleFetched] = useState([])
   const [url, setUrl] = useState(peopleApi)
   const [next, setNext] = useState("");
+  const [previous, setPrevious] = useState("");
 
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
@@ -25,6 +26,7 @@ const App = () => {
       const characters = response.data.results;
       setPeopleFetched(characters);
       setNext(response.data.next)
+      setPrevious(response.data.previous)
       // console.log(`Next => ${next}`)
     })
     .catch(error => {
@@ -33,8 +35,8 @@ const App = () => {
     })
   }, [url]);
 
-  function onNextClicked(){
-      if(next && next !== "" ) setUrl(next)
+  function onNextClicked(url){
+      if(url && url !== "" ) setUrl(url)
   }
 
   const StyledButton = styled.button`
@@ -42,6 +44,13 @@ const App = () => {
     border-radius: 3rem;
     font-family: 'Lato', serif;
     background: gray;
+    margin: 2rem;
+    color: white;
+    font-size: 1.6rem;
+  `
+
+  const GreenButton = styled(StyledButton)`
+    background: green;
   `
 
   return (
@@ -49,7 +58,8 @@ const App = () => {
       <h1 className="Header">React Wars</h1>
 
       <People people={peopleFetched}/>
-      <StyledButton onClick={() => onNextClicked()}>Next</StyledButton>
+      <StyledButton onClick={() => onNextClicked(previous)}>Previous</StyledButton>
+      <GreenButton onClick={() => onNextClicked(next)}>Next</GreenButton>
     </div>
   );
 }
