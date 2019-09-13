@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
 
+import People from './components/People/People'
+
 const peopleApi = 'https://swapi.co/api/people/'
 
 const App = () => {
@@ -29,6 +31,8 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+
+      <People people={peopleFetched}/>
     </div>
   );
 }
